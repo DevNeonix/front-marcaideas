@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">MarcaIdeas</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Login
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+    <!--<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>-->
+  </div>
+</nav>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-md-4" style="padding: 1rem">
+      <div class="card" style="padding: 1rem">
+        <div class="fom-group">
+          <label>Full Name</label>
+          <input type="email" [(ngModel)]="register.fullname" class="form-control" required maxlength=255>
+        </div>
+        <div class="fom-group">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="register.email" class="form-control" required maxlength=255>
+        </div>
+        <div class="fom-group container">
+          <label>Password</label>
+          <div class="row">
+            <input type="password" [(ngModel)]="register.password" #password class="form-control col-md-10">
+            <button class="btn col-md-2" (click)="changeAttr()" *ngIf="!passwordisVisible">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            </button>
+            <button class="btn col-md-2" (click)="changeAttr()" *ngIf="passwordisVisible">
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="fom-group">
+          <label>Fecha Nacimiento</label>
+          <input type="date" [(ngModel)]="register.fecha_nacimiento" class="form-control" required>
+        </div>
+        <div class="form-group" style="margin-top:1rem">
+          <button class="btn btn-primary btn-lg btn-block btn-outline" (click)="onSubmit()">Sign In</button>
+        </div>
+        <a class="form-group" (click)="goLogin()" style="cursor:pointer">Loguéate</a>
+      </div>
+    </div>
+  </div>
+</div>
